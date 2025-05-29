@@ -6,7 +6,7 @@ import { SESSION_COOKIE_NAME } from "./constants"
 acceptLanguage.languages(languages)
 
 export const config = {
-  matcher: ["/((?!_next|api|favicon.ico|assets).*)"],
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
 }
 
 const cookieName = "i18next"
@@ -104,15 +104,13 @@ export function middleware(req: NextRequest) {
 
   // Check if there is any supported locale in the pathname
   const pathname = req.nextUrl.pathname
-
-  // Check if the pathname is missing a locale
   const pathnameIsMissingLocale = languages.every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
   )
 
   // Redirect if there is no locale
   if (pathnameIsMissingLocale) {
-    return NextResponse.redirect(new URL(`/${fallbackLng}${pathname}`, req.url))
+    return NextResponse.redirect(new URL(`/${fallbackLng}${pathname.startsWith("/") ? "" : "/"}${pathname}`, req.url))
   }
 
   return response
