@@ -1,20 +1,19 @@
-import type { Metadata } from 'next'
-import './globals.css'
+import type React from "react"
+import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.dev',
+  title: "Marketplace Auctions",
+  description: "Buy and sell items through online auctions",
+    generator: 'v0.dev'
 }
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
-  return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  )
+}) {
+  return children
 }
+
+
+import './globals.css'
