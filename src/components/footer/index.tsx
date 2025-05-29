@@ -1,100 +1,104 @@
-'use client'
-import React, { useState } from 'react'
-import Link from 'next/link'
-import useGlobalContext from '@/hooks/use-context'
-import { useTranslation } from '@/app/i18n/client'
-import { ChangeLanguageButton } from './change-lang-button'
-import ThemeChanger from './change-theme-button'
-import { TUTORIAL_LINKS } from '@/constants'
-import { DownloadAppButtons } from './download-app-buttons'
-import { AppLogo } from '../common/app-logo'
-import { HowItWorksModal } from '../intro/how-it-works'
-import { ChangeCurrencyButton } from './change-currency-button'
+import Link from "next/link"
+import { AppLogo } from "@/components/common/app-logo"
 
-export const Footer = () => {
-  const globalContext = useGlobalContext()
-  const currentLanguage = globalContext.currentLanguage
-  const { t } = useTranslation(currentLanguage)
+interface FooterProps {
+  lang: string
+}
 
-  const [howItWorksModalOpened, setHowItWorksModalOpened] = useState(false)
-
+export function Footer({ lang }: FooterProps) {
   return (
-    <footer className="footer-bg pl-10 pr-10">
-      <section className="pt-100 pb-50">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-3 col-md-6 col-sm-6">
-              <div className="footer-widget mb-40">
-                <div className=" mb-30">
-                  <AppLogo />
-                </div>
-                <span>{t('footer.about_motto')}</span>
-                <div className="mb-10 d-flex align-items-center gap-2 mt-10">
-                  <ChangeLanguageButton />
-                  <ThemeChanger />
-                </div>
-                <div>
-                  <ChangeCurrencyButton />
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-3 col-md-6 col-sm-6">
-              <div className="footer-widget footer-second-col mb-40">
-                <div className="footer-widget-title">
-                  <h1> {t('footer.tutorial')} </h1>
-                </div>
-                <ul>
-                  <li>
-                    <span className="cursor-pointer" onClick={() => setHowItWorksModalOpened(true)}>
-                      {t('intro.how_it_works')}
-                    </span>
-                  </li>
-                  <li>
-                    <Link target="_blank" href={TUTORIAL_LINKS.CREATE_AUCTION}>
-                      {t('footer.create_auction')}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link target="_blank" href={TUTORIAL_LINKS.CREATE_BID}>
-                      {t('footer.create_bid')}
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-lg-3 col-md-6 col-sm-6">
-              <div className="footer-widget footer-third-col mb-40">
-                <div className="footer-widget-title">
-                  <h1>{t('footer.about')}</h1>
-                </div>
-                <ul>
-                  <li>
-                    <Link href={`/terms`}>{t('footer.privacy_policy')}</Link>
-                  </li>
-                  <li>
-                    <Link href={`/terms`}>{t('footer.terms_of_service')}</Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-lg-3 col-md-6 col-sm-6">
-              <div className="footer-widget footer-fourth-col mb-40">
-                <div className="footer-widget-title mb-20">
-                  <h1>{t('footer.mobile_app')}</h1>
-                  <span className="">{t('footer.enjoy_better_experience')}</span>
-                </div>
-                <DownloadAppButtons />
-              </div>
-            </div>
+    <footer className="border-t bg-background">
+      <div className="container py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Logo and Description */}
+          <div className="space-y-4">
+            <AppLogo />
+            <p className="text-sm text-muted-foreground">
+              The world's leading marketplace for unique auctions and collectibles.
+            </p>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="font-semibold mb-4">Quick Links</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href={`/${lang}/auctions`} className="text-muted-foreground hover:text-foreground">
+                  Browse Auctions
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${lang}/create-auction`} className="text-muted-foreground hover:text-foreground">
+                  Sell Items
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${lang}/how-it-works`} className="text-muted-foreground hover:text-foreground">
+                  How It Works
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${lang}/categories`} className="text-muted-foreground hover:text-foreground">
+                  Categories
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Support */}
+          <div>
+            <h3 className="font-semibold mb-4">Support</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href={`/${lang}/help`} className="text-muted-foreground hover:text-foreground">
+                  Help Center
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${lang}/contact`} className="text-muted-foreground hover:text-foreground">
+                  Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${lang}/safety`} className="text-muted-foreground hover:text-foreground">
+                  Safety Tips
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${lang}/fees`} className="text-muted-foreground hover:text-foreground">
+                  Fees
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h3 className="font-semibold mb-4">Legal</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href={`/${lang}/terms`} className="text-muted-foreground hover:text-foreground">
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${lang}/privacy`} className="text-muted-foreground hover:text-foreground">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${lang}/cookies`} className="text-muted-foreground hover:text-foreground">
+                  Cookie Policy
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
-      </section>
 
-      <HowItWorksModal
-        isOpened={howItWorksModalOpened}
-        skip={() => setHowItWorksModalOpened(false)}
-        finish={() => setHowItWorksModalOpened(false)}
-      />
+        <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
+          <p>&copy; 2024 Marketplace Auctions. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
   )
 }

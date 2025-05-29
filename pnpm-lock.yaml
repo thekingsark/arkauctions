@@ -75,8 +75,8 @@ importers:
         specifier: 1.2.2
         version: 1.2.2(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@radix-ui/react-slot':
-        specifier: 1.1.1
-        version: 1.1.1(@types/react@19.0.0)(react@19.0.0)
+        specifier: latest
+        version: 1.2.3(@types/react@19.0.0)(react@19.0.0)
       '@radix-ui/react-switch':
         specifier: 1.1.2
         version: 1.1.2(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -188,9 +188,6 @@ importers:
       react:
         specifier: ^19
         version: 19.0.0
-      react-countdown:
-        specifier: latest
-        version: 2.3.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react-date-picker:
         specifier: latest
         version: 11.0.0(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -2309,12 +2306,6 @@ packages:
     peerDependenciesMeta:
       '@types/react':
         optional: true
-
-  react-countdown@2.3.6:
-    resolution: {integrity: sha512-ZfX6S08Hb6x6W6eCn1hMDvxPICI/T30fd+gaeVTCR/2cGZ2WJ3f26e4ImNIMX1fHkopJrUdnRpWXP13/D39+gg==}
-    peerDependencies:
-      react: '>= 15'
-      react-dom: '>= 15'
 
   react-date-picker@11.0.0:
     resolution: {integrity: sha512-l+siu5HSZ/ciGL1293KCAHl4o9aD5rw16V4tB0C43h7QbMv2dWGgj7Dxgt8iztLaPVtEfOt/+sxNiTYw4WVq6A==}
@@ -4910,12 +4901,6 @@ snapshots:
       warning: 4.0.3
     optionalDependencies:
       '@types/react': 19.0.0
-
-  react-countdown@2.3.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
-    dependencies:
-      prop-types: 15.8.1
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
 
   react-date-picker@11.0.0(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:

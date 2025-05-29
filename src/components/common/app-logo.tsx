@@ -1,24 +1,12 @@
-"use client"
-import Image from "next/image"
-import useGlobalContext from "@/hooks/use-context"
+import { Gavel } from "lucide-react"
 
-const AppLogo = () => {
-  const globalContext = useGlobalContext()
-  const appName = globalContext.appSettings?.appName || "Marketplace Auctions"
-  const logoUrl = globalContext.appSettings?.logoUrl || "/assets/logo.png"
-
+export function AppLogo() {
   return (
-    <div className="app-logo">
-      <Image
-        src={logoUrl || "/placeholder.svg"}
-        alt={appName}
-        width={120}
-        height={40}
-        priority
-        className="logo-image"
-      />
+    <div className="flex items-center space-x-2">
+      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
+        <Gavel className="h-5 w-5 text-primary-foreground" />
+      </div>
+      <span className="font-bold text-xl">AuctionHub</span>
     </div>
   )
 }
-
-export default AppLogo

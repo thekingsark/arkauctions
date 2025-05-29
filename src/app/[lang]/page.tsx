@@ -2,9 +2,17 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { languages } from "@/app/i18n/settings"
 import { fetchCommonData } from "./common-fetch"
-import RootComponent from "./root"
 import { SESSION_COOKIE_NAME } from "@/constants"
 import { cookies } from "next/headers"
+import { Suspense } from "react"
+import { useTranslation } from "@/app/i18n"
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
+import { HeroSection } from "@/components/home-page/hero-section"
+import { FeaturedAuctions } from "@/components/home-page/featured-auctions"
+import { Categories } from "@/components/home-page/categories"
+import { HowItWorks } from "@/components/home-page/how-it-works"
+import { Preloader } from "@/components/common/preloader"
 
 const getAuctions = async () => {
   try {
@@ -147,11 +155,32 @@ export async function generateMetadata({ params }: { params: { lang: string } })
   }
 }
 
-export default async function HomePage({ params }: { params: { lang: string } }) {
-  const { lang } = params
-  if (languages.indexOf(lang) < 0) notFound()
+interface HomePageProps {
+  params: {
+    lang: string
+  }
+}
 
-  const commonData = await fetchCommonData(lang)
+export default async function HomePage({ params: { lang } }: HomePageProps) {
+  const { t } = await useTranslation(lang)
 
-  return <RootComponent lang={lang} {...commonData} />
+  return (
+    <div className="min-h-screen bg-background">
+      <Header lang={lang} />
+
+      <main>
+        <HeroSection lang={lang} />
+
+        <Suspense fallback={<Preloader />}>
+          <FeaturedAuctions lang={lang} />
+        </Suspense>
+
+        <Categories lang={lang} />
+
+        <HowItWorks lang={lang} />
+      </main>
+
+      <Footer lang={lang} />
+    </div>
+  )
 }

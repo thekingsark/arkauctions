@@ -1,91 +1,40 @@
-'use client'
+"use client"
 
-import { useTranslation } from '@/app/i18n/client'
-import useGlobalContext from '@/hooks/use-context'
-import React from 'react'
-import { default as ReactCountdown } from 'react-countdown'
-import { dir } from 'i18next'
+import { useState, useEffect } from "react"
 
-export const Countdown = ({
-  deadlineDate = new Date(),
-  large = false,
-  small = false,
-  withDays = false,
-}) => {
-  const globalContext = useGlobalContext()
-  const currentLanguage = globalContext.currentLanguage
-  const { t } = useTranslation(currentLanguage)
-  const direction = dir(currentLanguage)
+interface CountdownProps {
+  endTime: Date
+}
 
-  const renderer = (params: {
-    days: number
-    hours: number
-    minutes: number
-    seconds: number
-    completed: boolean
-  }) => {
-    const { days, minutes, seconds, completed } = params
-    let { hours } = params
+export function Countdown({ endTime }: CountdownProps) {
+  const [timeLeft, setTimeLeft] = useState("")
 
-    if (!withDays) {
-      hours += days * 24
-    }
+  useEffect(() => {
+    const timer = setInterval(() => {
+      const now = new Date().getTime()
+      const distance = endTime.getTime() - now
 
-    if (completed) {
-      return (
-        <p className="auction-card-status m-0">
-          {t('auction_details.closed')}
-          <style jsx>{`
-            .auction-card-status {
-              color: var(--call_to_action);
-              white-space: nowrap;
-              font-size: ${large ? 24 : small ? 16 : 18}px;
-            }
-          `}</style>
-        </p>
-      )
-    }
+      if (distance < 0) {
+        setTimeLeft("Ended")
+        clearInterval(timer)
+        return
+      }
 
-    if (days > 3) {
-      return (
-        <p className="auction-card-status m-0">
-          {t('generic.days_no', { no: days })}
-        </p>
-      )
-    }
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24))
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
 
-    return (
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-evenly',
-          alignItems: 'center',
-          fontSize: small ? 14 : large ? 24 : 16,
-          color: 'var(--font_1)',
-        }}
-      >
-        {withDays && (
-          <>
-            <div style={{ textAlign: 'start', width: small ? 24 : 35 }}>
-              <span>{days.toString().padStart(2, '0')}</span>
-            </div>
-            <div style={{ ...(direction === 'rtl' ? { paddingLeft: 6 } : { paddingRight: 6 }) }}>:</div>
-          </>
-        )}
-        <div className='d-flex align-items-center justify-content-center' style={{ textAlign: 'start', width: small ? 24 : 30 }} suppressHydrationWarning>
-          <span>{hours.toString().padStart(2, '0')}</span>
-        </div>
-        <div className='d-flex align-items-center justify-content-center'>:</div>
-        <div className='d-flex align-items-center justify-content-center' style={{ textAlign: 'start', width: small ? 24 : 30 }} suppressHydrationWarning>
-          {minutes.toString().padStart(2, '0')}
-        </div>
-        <div className='d-flex align-items-center justify-content-center' style={{ ...(direction === 'rtl' ? { paddingLeft: 6 } : { paddingRight: 6 }) }}>:</div>
-        <div style={{ textAlign: 'start', width: small ? 24 : 30 }} suppressHydrationWarning>
-          {seconds.toString().padStart(2, '0')}
-        </div>
-      </div >
-    )
-  }
+      if (days > 0) {
+        setTimeLeft(`${days}d ${hours}h`)
+      } else if (hours > 0) {
+        setTimeLeft(`${hours}h ${minutes}m`)
+      } else {
+        setTimeLeft(`${minutes}m`)
+      }
+    }, 1000)
 
-  return <ReactCountdown date={deadlineDate} renderer={renderer} />
+    return () => clearInterval(timer)
+  }, [endTime])
+
+  return <span>{timeLeft}</span>
 }
