@@ -27,7 +27,7 @@
     "see_auction_details": "See details",
     "see_auctions": "See auctions"
   },
-  "auction_details_status":{
+  "auction_details_status": {
     "closing_at": "Closing at:",
     "closed_at": "Closed at:"
   },
@@ -269,9 +269,9 @@
     "on": "On ",
     "can_easily_trade": " you can sell items you no longer need and buy items you want.",
     "steps": {
-      "create_auction":"1. Create auction",
+      "create_auction": "1. Create auction",
       "wait_for_bids": "2. Wait for bids",
-      "accept_bid":"3. Accept bid",
+      "accept_bid": "3. Accept bid",
       "review": "4. Add review"
     },
     "create_auction": {
@@ -1000,5 +1000,27 @@
     "step_1": "1. Choose coins package",
     "step_2": "2. Choose payment method",
     "no_products_available": "No products available inside the app."
+  },
+  "common": {
+    "search": "Search",
+    "login": "Login",
+    "signup": "Sign Up",
+    "logout": "Logout",
+    "profile": "Profile",
+    "settings": "Settings"
+  },
+  "navigation": {
+    "home": "Home",
+    "auctions": "Auctions",
+    "sell": "Sell",
+    "categories": "Categories",
+    "help": "Help"
+  },
+  "auction": {
+    "currentBid": "Current bid",
+    "placeBid": "Place Bid",
+    "endTime": "Ends",
+    "bids": "bids",
+    "seller": "Seller"
   }
 }

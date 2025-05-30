@@ -14,7 +14,7 @@ export function Footer({ lang }: FooterProps) {
           <div className="space-y-4">
             <AppLogo />
             <p className="text-sm text-muted-foreground">
-              The world's leading marketplace for unique auctions and collectibles.
+              The world's leading marketplace for online auctions. Buy and sell unique items with confidence.
             </p>
           </div>
 
@@ -28,8 +28,8 @@ export function Footer({ lang }: FooterProps) {
                 </Link>
               </li>
               <li>
-                <Link href={`/${lang}/create-auction`} className="text-muted-foreground hover:text-foreground">
-                  Sell Items
+                <Link href={`/${lang}/sell`} className="text-muted-foreground hover:text-foreground">
+                  Sell Item
                 </Link>
               </li>
               <li>
@@ -65,8 +65,8 @@ export function Footer({ lang }: FooterProps) {
                 </Link>
               </li>
               <li>
-                <Link href={`/${lang}/fees`} className="text-muted-foreground hover:text-foreground">
-                  Fees
+                <Link href={`/${lang}/faq`} className="text-muted-foreground hover:text-foreground">
+                  FAQ
                 </Link>
               </li>
             </ul>

@@ -1,4 +1,3 @@
-import { Card, CardContent } from "@/components/ui/card"
 import { Search, Gavel, CreditCard, Package } from "lucide-react"
 
 interface HowItWorksProps {
@@ -8,23 +7,23 @@ interface HowItWorksProps {
 const steps = [
   {
     icon: Search,
-    title: "Browse & Discover",
-    description: "Search through thousands of unique auctions and find items you love",
+    title: "Find Items",
+    description: "Browse thousands of unique items or search for something specific",
   },
   {
     icon: Gavel,
-    title: "Place Your Bid",
-    description: "Bid on items you want and track your auctions in real-time",
+    title: "Place Bids",
+    description: "Bid on items you love and watch the auction unfold in real-time",
   },
   {
     icon: CreditCard,
-    title: "Secure Payment",
-    description: "Pay securely when you win with our trusted payment system",
+    title: "Win & Pay",
+    description: "Win the auction and complete your purchase securely",
   },
   {
     icon: Package,
-    title: "Receive Your Item",
-    description: "Get your items shipped directly to your door with tracking",
+    title: "Receive Items",
+    description: "Get your items delivered safely to your doorstep",
   },
 ]
 
@@ -34,21 +33,29 @@ export function HowItWorks({ lang }: HowItWorksProps) {
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">How It Works</h2>
-          <p className="text-muted-foreground text-lg">Start bidding in just a few simple steps</p>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Getting started with our auction marketplace is simple and secure
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {steps.map((step, index) => (
-            <Card key={index} className="text-center">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <step.icon className="h-6 w-6 text-primary-foreground" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {steps.map((step, index) => {
+            const IconComponent = step.icon
+            return (
+              <div key={index} className="text-center">
+                <div className="relative mb-6">
+                  <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto">
+                    <IconComponent className="h-8 w-8 text-primary-foreground" />
+                  </div>
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-sm font-bold">
+                    {index + 1}
+                  </div>
                 </div>
-                <h3 className="font-semibold mb-2">{step.title}</h3>
-                <p className="text-sm text-muted-foreground">{step.description}</p>
-              </CardContent>
-            </Card>
-          ))}
+                <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
+                <p className="text-muted-foreground">{step.description}</p>
+              </div>
+            )
+          })}
         </div>
       </div>
     </section>
