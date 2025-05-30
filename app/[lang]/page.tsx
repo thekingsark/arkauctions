@@ -13,7 +13,7 @@ interface HomePageProps {
 
 export default function HomePage({ params: { lang } }: HomePageProps) {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <Header lang={lang} />
       <main>
         <HeroSection lang={lang} />

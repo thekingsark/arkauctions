@@ -1,5 +1,4 @@
 import Link from "next/link"
-import { AppLogo } from "@/components/common/app-logo"
 
 interface FooterProps {
   lang: string
@@ -7,77 +6,69 @@ interface FooterProps {
 
 export function Footer({ lang }: FooterProps) {
   return (
-    <footer className="border-t bg-background">
-      <div className="container py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Logo and Description */}
-          <div className="space-y-4">
-            <AppLogo />
-            <p className="text-sm text-muted-foreground">
-              The world's leading marketplace for unique auctions and collectibles.
-            </p>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href={`/${lang}/auctions`} className="text-muted-foreground hover:text-foreground">
-                  Browse Auctions
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${lang}/sell`} className="text-muted-foreground hover:text-foreground">
-                  Sell Items
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${lang}/how-it-works`} className="text-muted-foreground hover:text-foreground">
-                  How It Works
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Support */}
-          <div>
-            <h3 className="font-semibold mb-4">Support</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href={`/${lang}/help`} className="text-muted-foreground hover:text-foreground">
-                  Help Center
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${lang}/contact`} className="text-muted-foreground hover:text-foreground">
-                  Contact Us
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Legal */}
-          <div>
-            <h3 className="font-semibold mb-4">Legal</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href={`/${lang}/terms`} className="text-muted-foreground hover:text-foreground">
-                  Terms of Service
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${lang}/privacy`} className="text-muted-foreground hover:text-foreground">
-                  Privacy Policy
-                </Link>
-              </li>
-            </ul>
-          </div>
+    <footer className="footer">
+      <div className="footer-content">
+        <div className="footer-section">
+          <h3>Marketplace Auctions</h3>
+          <p style={{ color: "#94a3b8", marginBottom: "16px" }}>
+            The world's leading marketplace for online auctions. Buy and sell unique items with confidence.
+          </p>
         </div>
 
-        <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; 2024 Marketplace Auctions. All rights reserved.</p>
+        <div className="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li>
+              <Link href={`/${lang}/auctions`}>Browse Auctions</Link>
+            </li>
+            <li>
+              <Link href={`/${lang}/sell`}>Sell Item</Link>
+            </li>
+            <li>
+              <Link href={`/${lang}/how-it-works`}>How It Works</Link>
+            </li>
+            <li>
+              <Link href={`/${lang}/categories`}>Categories</Link>
+            </li>
+          </ul>
         </div>
+
+        <div className="footer-section">
+          <h3>Support</h3>
+          <ul>
+            <li>
+              <Link href={`/${lang}/help`}>Help Center</Link>
+            </li>
+            <li>
+              <Link href={`/${lang}/contact`}>Contact Us</Link>
+            </li>
+            <li>
+              <Link href={`/${lang}/safety`}>Safety Tips</Link>
+            </li>
+            <li>
+              <Link href={`/${lang}/faq`}>FAQ</Link>
+            </li>
+          </ul>
+        </div>
+
+        <div className="footer-section">
+          <h3>Legal</h3>
+          <ul>
+            <li>
+              <Link href={`/${lang}/terms`}>Terms of Service</Link>
+            </li>
+            <li>
+              <Link href={`/${lang}/privacy`}>Privacy Policy</Link>
+            </li>
+            <li>
+              <Link href={`/${lang}/cookies`}>Cookie Policy</Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="footer-bottom">
+        <p>&copy; 2024 Marketplace Auctions. All rights reserved.</p>
       </div>
     </footer>
   )

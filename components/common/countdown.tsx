@@ -17,19 +17,18 @@ export function Countdown({ endTime }: CountdownProps) {
       if (distance < 0) {
         setTimeLeft("Ended")
         clearInterval(timer)
-        return
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24))
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
-
-      if (days > 0) {
-        setTimeLeft(`${days}d ${hours}h`)
-      } else if (hours > 0) {
-        setTimeLeft(`${hours}h ${minutes}m`)
       } else {
-        setTimeLeft(`${minutes}m`)
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24))
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+
+        if (days > 0) {
+          setTimeLeft(`${days}d ${hours}h`)
+        } else if (hours > 0) {
+          setTimeLeft(`${hours}h ${minutes}m`)
+        } else {
+          setTimeLeft(`${minutes}m`)
+        }
       }
     }, 1000)
 

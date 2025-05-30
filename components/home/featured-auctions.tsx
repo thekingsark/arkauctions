@@ -1,5 +1,3 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import { AuctionCard } from "@/components/auction/auction-card"
 
 interface FeaturedAuctionsProps {
@@ -7,7 +5,6 @@ interface FeaturedAuctionsProps {
 }
 
 export function FeaturedAuctions({ lang }: FeaturedAuctionsProps) {
-  // Mock auction data
   const featuredAuctions = [
     {
       id: "1",
@@ -60,27 +57,25 @@ export function FeaturedAuctions({ lang }: FeaturedAuctionsProps) {
   ]
 
   return (
-    <section className="py-16">
+    <section className="section">
       <div className="container">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Featured Auctions</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <h2 style={{ fontSize: "36px", fontWeight: "700", marginBottom: "16px" }}>Featured Auctions</h2>
+          <p style={{ color: "var(--secondary-color)", maxWidth: "600px", margin: "0 auto" }}>
             Discover exceptional items from trusted sellers around the world
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3">
           {featuredAuctions.map((auction) => (
             <AuctionCard key={auction.id} auction={auction} lang={lang} />
           ))}
         </div>
 
-        <div className="text-center">
-          <Link href={`/${lang}/auctions`}>
-            <Button variant="outline" size="lg">
-              View All Auctions
-            </Button>
-          </Link>
+        <div className="text-center" style={{ marginTop: "40px" }}>
+          <a href={`/${lang}/auctions`} className="nav-button primary">
+            View All Auctions
+          </a>
         </div>
       </div>
     </section>
