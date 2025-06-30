@@ -5,13 +5,13 @@ import { FeaturedAuctions } from "@/components/home/featured-auctions"
 import { Categories } from "@/components/home/categories"
 import { HowItWorks } from "@/components/home/how-it-works"
 
-interface HomePageProps {
+interface PageProps {
   params: {
     lang: string
   }
 }
 
-export default function HomePage({ params: { lang } }: HomePageProps) {
+export default function Page({ params: { lang } }: PageProps) {
   return (
     <div className="min-h-screen">
       <Header lang={lang} />
