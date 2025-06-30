@@ -1,7 +1,8 @@
-type PageProps = {
-  params: { lang: string }
+interface PageProps {
+  params: { lang: string };
 }
 
 export default function Page({ params }: PageProps) {
-  return <div>Lang: {params.lang}</div>
+  // Use params.lang as needed
+  return <div>Language: {params.lang}</div>;
 }
