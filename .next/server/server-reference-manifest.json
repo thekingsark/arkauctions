@@ -1,0 +1,70 @@
+{
+  "node": {
+    "001e2d263b0e7623c03e5bc9ac2a9825db2c2d045e": {
+      "workers": {
+        "app/[lang]/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5Chp%5C%5Csource%5C%5Crepos%5C%5Cauction%5C%5Cbiddo_web%5C%5Csrc%5C%5Capp%5C%5Cactions%5C%5Cauth-actions.ts%22%2C%5B%5B%22001e2d263b0e7623c03e5bc9ac2a9825db2c2d045e%22%2C%22removeSession%22%5D%2C%5B%2200f80a388851ebe4d918d6d2825afa76b1866aac86%22%2C%22removeAccountSession%22%5D%2C%5B%2240356eb03d115b44419cc28a24190efb57f9840662%22%2C%22createAccountSession%22%5D%2C%5B%2240849c6b55f5f9ef05c20e583661a4623ffe95a3a1%22%2C%22createSession%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        },
+        "app/[lang]/[...not_found]/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5Chp%5C%5Csource%5C%5Crepos%5C%5Cauction%5C%5Cbiddo_web%5C%5Csrc%5C%5Capp%5C%5Cactions%5C%5Cauth-actions.ts%22%2C%5B%5B%22001e2d263b0e7623c03e5bc9ac2a9825db2c2d045e%22%2C%22removeSession%22%5D%2C%5B%2200f80a388851ebe4d918d6d2825afa76b1866aac86%22%2C%22removeAccountSession%22%5D%2C%5B%2240356eb03d115b44419cc28a24190efb57f9840662%22%2C%22createAccountSession%22%5D%2C%5B%2240849c6b55f5f9ef05c20e583661a4623ffe95a3a1%22%2C%22createSession%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/[lang]/page": "action-browser",
+        "app/[lang]/[...not_found]/page": "action-browser"
+      }
+    },
+    "00f80a388851ebe4d918d6d2825afa76b1866aac86": {
+      "workers": {
+        "app/[lang]/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5Chp%5C%5Csource%5C%5Crepos%5C%5Cauction%5C%5Cbiddo_web%5C%5Csrc%5C%5Capp%5C%5Cactions%5C%5Cauth-actions.ts%22%2C%5B%5B%22001e2d263b0e7623c03e5bc9ac2a9825db2c2d045e%22%2C%22removeSession%22%5D%2C%5B%2200f80a388851ebe4d918d6d2825afa76b1866aac86%22%2C%22removeAccountSession%22%5D%2C%5B%2240356eb03d115b44419cc28a24190efb57f9840662%22%2C%22createAccountSession%22%5D%2C%5B%2240849c6b55f5f9ef05c20e583661a4623ffe95a3a1%22%2C%22createSession%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        },
+        "app/[lang]/[...not_found]/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5Chp%5C%5Csource%5C%5Crepos%5C%5Cauction%5C%5Cbiddo_web%5C%5Csrc%5C%5Capp%5C%5Cactions%5C%5Cauth-actions.ts%22%2C%5B%5B%22001e2d263b0e7623c03e5bc9ac2a9825db2c2d045e%22%2C%22removeSession%22%5D%2C%5B%2200f80a388851ebe4d918d6d2825afa76b1866aac86%22%2C%22removeAccountSession%22%5D%2C%5B%2240356eb03d115b44419cc28a24190efb57f9840662%22%2C%22createAccountSession%22%5D%2C%5B%2240849c6b55f5f9ef05c20e583661a4623ffe95a3a1%22%2C%22createSession%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/[lang]/page": "action-browser",
+        "app/[lang]/[...not_found]/page": "action-browser"
+      }
+    },
+    "40356eb03d115b44419cc28a24190efb57f9840662": {
+      "workers": {
+        "app/[lang]/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5Chp%5C%5Csource%5C%5Crepos%5C%5Cauction%5C%5Cbiddo_web%5C%5Csrc%5C%5Capp%5C%5Cactions%5C%5Cauth-actions.ts%22%2C%5B%5B%22001e2d263b0e7623c03e5bc9ac2a9825db2c2d045e%22%2C%22removeSession%22%5D%2C%5B%2200f80a388851ebe4d918d6d2825afa76b1866aac86%22%2C%22removeAccountSession%22%5D%2C%5B%2240356eb03d115b44419cc28a24190efb57f9840662%22%2C%22createAccountSession%22%5D%2C%5B%2240849c6b55f5f9ef05c20e583661a4623ffe95a3a1%22%2C%22createSession%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        },
+        "app/[lang]/[...not_found]/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5Chp%5C%5Csource%5C%5Crepos%5C%5Cauction%5C%5Cbiddo_web%5C%5Csrc%5C%5Capp%5C%5Cactions%5C%5Cauth-actions.ts%22%2C%5B%5B%22001e2d263b0e7623c03e5bc9ac2a9825db2c2d045e%22%2C%22removeSession%22%5D%2C%5B%2200f80a388851ebe4d918d6d2825afa76b1866aac86%22%2C%22removeAccountSession%22%5D%2C%5B%2240356eb03d115b44419cc28a24190efb57f9840662%22%2C%22createAccountSession%22%5D%2C%5B%2240849c6b55f5f9ef05c20e583661a4623ffe95a3a1%22%2C%22createSession%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/[lang]/page": "action-browser",
+        "app/[lang]/[...not_found]/page": "action-browser"
+      }
+    },
+    "40849c6b55f5f9ef05c20e583661a4623ffe95a3a1": {
+      "workers": {
+        "app/[lang]/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5Chp%5C%5Csource%5C%5Crepos%5C%5Cauction%5C%5Cbiddo_web%5C%5Csrc%5C%5Capp%5C%5Cactions%5C%5Cauth-actions.ts%22%2C%5B%5B%22001e2d263b0e7623c03e5bc9ac2a9825db2c2d045e%22%2C%22removeSession%22%5D%2C%5B%2200f80a388851ebe4d918d6d2825afa76b1866aac86%22%2C%22removeAccountSession%22%5D%2C%5B%2240356eb03d115b44419cc28a24190efb57f9840662%22%2C%22createAccountSession%22%5D%2C%5B%2240849c6b55f5f9ef05c20e583661a4623ffe95a3a1%22%2C%22createSession%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        },
+        "app/[lang]/[...not_found]/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5Chp%5C%5Csource%5C%5Crepos%5C%5Cauction%5C%5Cbiddo_web%5C%5Csrc%5C%5Capp%5C%5Cactions%5C%5Cauth-actions.ts%22%2C%5B%5B%22001e2d263b0e7623c03e5bc9ac2a9825db2c2d045e%22%2C%22removeSession%22%5D%2C%5B%2200f80a388851ebe4d918d6d2825afa76b1866aac86%22%2C%22removeAccountSession%22%5D%2C%5B%2240356eb03d115b44419cc28a24190efb57f9840662%22%2C%22createAccountSession%22%5D%2C%5B%2240849c6b55f5f9ef05c20e583661a4623ffe95a3a1%22%2C%22createSession%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/[lang]/page": "action-browser",
+        "app/[lang]/[...not_found]/page": "action-browser"
+      }
+    }
+  },
+  "edge": {},
+  "encryptionKey": "JCfLv64YnQDwv/1pETQ/BsB6mQN5Tbnv2fJXT4lLFRU="
+}
